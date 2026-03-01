@@ -15,7 +15,7 @@ import numpy as np
 from datetime import datetime, timedelta
 
 # ── CONFIG ────────────────────────────────────
-MONGODB_URI = "your mongodb_uri"
+MONGODB_URI = "MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database_name?retryWrites=true&w=majority"
 DB_NAME       = "kisandb"
 MODELS_FOLDER = "./models"
 PORT          = 5000
