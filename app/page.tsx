@@ -18,6 +18,7 @@ import {
 import { useLanguage } from "@/lib/LanguageContext";
 import { useAuth } from "@/lib/AuthContext";
 import LoanSubsidyChecker from "@/components/LoanSubsidyChecker";
+import SustainabilityWidget from "@/components/SustainabilityWidget";
 import { ChevronRight } from "lucide-react";
 
 export default function Dashboard() {
@@ -207,6 +208,9 @@ export default function Dashboard() {
           onClose={() => setIsCheckerOpen(false)}
         />
       )}
+
+      {/* 🌱 Sustainability Impact Widget */}
+      <SustainabilityWidget userId={user?._id?.toString() || ""} />
     </div>
   );
 }
