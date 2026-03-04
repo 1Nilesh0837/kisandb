@@ -1,10 +1,22 @@
 import mongoose from "mongoose";
 
-const MONGODB_URI = process.env.MONGODB_URI || "";
+const REQUIRED_ENV_VARS = [
+    "MONGODB_URI",
+    "GROQ_API_KEY",
+    "JWT_SECRET",
+];
 
-if (!MONGODB_URI) {
-    throw new Error("Please define the MONGODB_URI environment variable inside .env.local");
+for (const envVar of REQUIRED_ENV_VARS) {
+    if (!process.env[envVar]) {
+        throw new Error(`Please define the ${envVar} environment variable inside .env.local`);
+    }
 }
+
+if (!process.env.WEATHER_API_KEY) {
+    console.warn("⚠️ WEATHER_API_KEY not set — weather features will be disabled");
+}
+
+const MONGODB_URI = process.env.MONGODB_URI!;
 
 let cached = (global as any).mongoose;
 
