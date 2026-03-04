@@ -3,6 +3,9 @@ import { connectToDatabase } from "@/lib/mongodb";
 import { checkInventoryAlerts, saveAlerts } from "@/lib/alertEngine";
 import { sendDailySummary } from "@/lib/smsService";
 
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 export async function GET() {
     try {
         const { db } = await connectToDatabase();

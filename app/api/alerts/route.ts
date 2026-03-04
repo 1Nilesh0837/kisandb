@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { getAlerts, markRead } from "@/lib/alertEngine";
 import { getUserIdFromRequest } from "@/lib/auth";
 
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 export async function GET(req: NextRequest) {
     try {
         const userId = getUserIdFromRequest(req);

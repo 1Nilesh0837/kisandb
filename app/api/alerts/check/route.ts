@@ -5,6 +5,9 @@ import { sendSMS } from "@/lib/smsService";
 import { getUserIdFromRequest } from "@/lib/auth";
 import { ObjectId } from "mongodb";
 
+export const dynamic = "force-dynamic";
+export const runtime = "nodejs";
+
 export async function POST(req: NextRequest) {
     try {
         const userId = getUserIdFromRequest(req);
